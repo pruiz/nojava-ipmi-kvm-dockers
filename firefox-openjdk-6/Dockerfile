@@ -24,6 +24,7 @@ RUN NOVNC_VERSION="1.1.0" && \
     ln -s "/opt/noVNC-${NOVNC_VERSION}/utils/launch.sh" /usr/local/bin/launch_novnc && \
     rm -f /tmp/novnc.tar.gz
 
+COPY listener.py /usr/local/bin/listener.py
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY init.sh /init.sh
 
