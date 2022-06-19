@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
-
-host=
+host=$KVM_HOSTNAME
 user=root
 password=
 model=unknown
@@ -28,8 +27,7 @@ while :; do
 		shift
 		break
 		;;
-	*)
-		host=$1
+	'')
 		break
 		;;
 	esac
