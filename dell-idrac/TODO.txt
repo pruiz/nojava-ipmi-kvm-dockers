@@ -1,0 +1,8 @@
+TODO
+====
+
+- Integrate: https://github.com/pjr/keycode-idrac ?
+	* gcc -o keycodehack.so -xc keycodechack.c -shared -s -ldl -fPIC
+	* LD_PRELOAD=keycodehack.so
+
+
