@@ -26,6 +26,7 @@ RUN NOVNC_VERSION="1.1.0" && \
 
 COPY listener.py /usr/local/bin/listener.py
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY import_jnlp_cert.py /usr/local/bin/import_jnlp_cert.py
 COPY init.sh /init.sh
 
 WORKDIR /tmp

@@ -23,8 +23,8 @@ itweb-settings set deployment.security.notinca.warning false
 itweb-settings set deployment.security.expired.warning false
 export JAVA_SECURITY_DIR="/root/.config/icedtea-web/security"
 mkdir -p "${JAVA_SECURITY_DIR}"
-#echo | openssl s_client -showcerts -servername ${KVM_HOSTNAME} -connect ${KVM_HOSTNAME}:443 2>/dev/null | openssl x509 -inform pem -outform pem > /root/cert.pem
-#keytool -importcert -noprompt -file /root/cert.pem -keystore "${JAVA_SECURITY_DIR}/trusted.certs" -storepass changeit
-#python /usr/local/bin/import_jnlp_cert.py
+echo | openssl s_client -showcerts -servername ${KVM_HOSTNAME} -connect ${KVM_HOSTNAME}:443 2>/dev/null | openssl x509 -inform pem -outform pem > /root/cert.pem
+keytool -importcert -noprompt -file /root/cert.pem -keystore "${JAVA_SECURITY_DIR}/trusted.certs" -storepass changeit
+python /usr/local/bin/import_jnlp_cert.py
 
 exec /usr/bin/supervisord
